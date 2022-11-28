@@ -6,7 +6,7 @@ import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 
-category=['Politics','Economic', 'Social','Culture','Word','IT']
+category=['Politics','Economic', 'Social','Culture','World','IT']
 
 #url='https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=100' #정치
 #url='https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=101'  #경제
@@ -29,7 +29,7 @@ for i in range(6):
         title=re.compile('[^가-힣 ]').sub(' ',title)    #^가-힣0-9a-zA-Z
         #print(title)
         titles.append(title)
-    df_section_titles=pd.DataFrame(titles, columns=['title'])
+    df_section_titles=pd.DataFrame(titles, columns=['titles'])
     df_section_titles['category']=category[i]
     df_titles=pd.concat([df_titles, df_section_titles],axis='rows',ignore_index=True)
 
